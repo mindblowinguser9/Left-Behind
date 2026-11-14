@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LEFT BEHIND is an interactive student archive about NASA equipment left on the Moon and Mars.">
+  <title>LEFT BEHIND | An Interactive Archive of Humanity's Footprints Beyond Earth</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#archive">Skip to the archive</a>
+
+  <nav class="topnav" aria-label="Main">
+    <a href="#home" class="brand">LEFT BEHIND</a>
+    <ul>
+      <li><a href="#archive">Archive</a></li>
+      <li><a href="#stories">Stories</a></li>
+      <li><a href="#matters">Why It Matters</a></li>
+      <li><a href="#sources">Sources</a></li>
+    </ul>
+  </nav>
+
+  <!-- SECTION A: HOMEPAGE -->
+  <header id="home" class="hero">
+    <p class="eyebrow">Student project &middot; NASA Space Apps Challenge 2026</p>
+    <h1>LEFT BEHIND</h1>
+    <p class="subtitle">An Interactive Archive of Humanity's Footprints Beyond Earth</p>
+    <p class="intro">
+      Since the 1960s, NASA missions have left hardware on the Moon and Mars.
+      Some of it was left on purpose. Some was thrown away during landing.
+      Some simply stopped working. Each piece has a story, and the science it made possible.
+    </p>
+    <a class="button" href="#archive">Explore the Archive</a>
+  </header>
+
+  <main>
+
+    <!-- SECTION B: INTERACTIVE ARCHIVE -->
+    <section id="archive" class="section" aria-labelledby="archive-title">
+      <h2 id="archive-title">The Archive</h2>
+      <p class="hint">Select an object to open its file.</p>
+
+      <ul class="legend" aria-label="What the status labels mean">
+        <li><strong>Intentionally left behind</strong> Equipment a crew chose to leave on the surface when its mission ended.</li>
+        <li><strong>Discarded landing hardware</strong> Parts built to be released during landing and never recovered.</li>
+        <li><strong>Retired rover</strong> A working rover whose mission has ended.</li>
+      </ul>
+
+      <div class="cards">
+
+        <button class="card" type="button" data-id="lrv" aria-expanded="false" aria-controls="detail">
+          <svg class="card-art" viewBox="0 0 120 70" aria-hidden="true" focusable="false">
+            <line x1="4" y1="63" x2="116" y2="63"/>
+            <rect x="22" y="34" width="76" height="8" rx="3"/>
+            <rect x="40" y="24" width="12" height="10" rx="2"/>
+            <rect x="60" y="24" width="12" height="10" rx="2"/>
+            <line x1="90" y1="34" x2="90" y2="14"/>
+            <path d="M81 14 Q90 22 99 14"/>
+            <circle cx="32" cy="51" r="11"/><circle cx="32" cy="51" r="4"/>
+            <circle cx="88" cy="51" r="11"/><circle cx="88" cy="51" r="4"/>
+          </svg>
+          <span class="card-title">Lunar Roving Vehicle</span>
+          <span class="badge">Intentionally left behind</span>
+          <span class="card-line"><strong>Mission:</strong> Apollo 15, 16 and 17 (1971&ndash;1972)</span>
+          <span class="card-line"><strong>Location:</strong> The Moon, at three Apollo landing sites</span>
+          <span class="card-line">The battery-powered rover that let Apollo crews explore far from their lander.</span>
+          <span class="card-open">Open file &rarr;</span>
+        </button>
+
+        <button class="card" type="button" data-id="backshell" aria-expanded="false" aria-controls="detail">
+          <svg class="card-art" viewBox="0 0 120 70" aria-hidden="true" focusable="false">
+            <path d="M18 26 Q60 -2 102 26"/>
+            <line x1="18" y1="26" x2="60" y2="46"/>
+            <line x1="102" y1="26" x2="60" y2="46"/>
+            <line x1="60" y1="12" x2="60" y2="46"/>
+            <line x1="39" y1="18" x2="60" y2="46"/>
+            <line x1="81" y1="18" x2="60" y2="46"/>
+            <path d="M46 64 L54 46 L66 46 L74 64 Z"/>
+          </svg>
+          <span class="card-title">Perseverance Parachute and Backshell</span>
+          <span class="badge">Discarded landing hardware</span>
+          <span class="card-line"><strong>Mission:</strong> Mars 2020 / Perseverance (landed Feb 18, 2021)</span>
+          <span class="card-line"><strong>Location:</strong> Jezero Crater, Mars</span>
+          <span class="card-line">The landing gear that slowed the rover, then fell away.</span>
+          <span class="card-open">Open file &rarr;</span>
+        </button>
+
+        <button class="card" type="button" data-id="opportunity" aria-expanded="false" aria-controls="detail">
+          <svg class="card-art" viewBox="0 0 120 70" aria-hidden="true" focusable="false">
+            <line x1="4" y1="64" x2="116" y2="64"/>
+            <rect x="30" y="22" width="60" height="6" rx="1"/>
+            <rect x="38" y="30" width="44" height="14" rx="3"/>
+            <line x1="60" y1="22" x2="60" y2="10"/>
+            <rect x="54" y="4" width="12" height="6" rx="1"/>
+            <line x1="44" y1="44" x2="40" y2="55"/><line x1="60" y1="44" x2="60" y2="55"/><line x1="76" y1="44" x2="80" y2="55"/>
+            <circle cx="40" cy="57" r="7"/><circle cx="60" cy="57" r="7"/><circle cx="80" cy="57" r="7"/>
+          </svg>
+          <span class="card-title">Opportunity Rover</span>
+          <span class="badge">Retired rover</span>
+          <span class="card-line"><strong>Mission:</strong> Mars Exploration Rover (landed January 2004)</span>
+          <span class="card-line"><strong>Location:</strong> Perseverance Valley, Mars</span>
+          <span class="card-line">A rover built for 90 days that explored for about 15 years.</span>
+          <span class="card-open">Open file &rarr;</span>
+        </button>
+
+      </div>
+
+      <!-- Hidden until a card is opened. script.js fills it. -->
+      <div id="detail" class="detail" hidden tabindex="-1" role="region" aria-labelledby="detail-title"></div>
+      <noscript><p class="hint">Please turn on JavaScript to open the object files and read the stories.</p></noscript>
+    </section>
+
+    <!-- SECTION C: THE STORIES -->
+    <section id="stories" class="section" aria-labelledby="stories-title">
+      <h2 id="stories-title">The Stories</h2>
+      <p class="hint">Three short stories, one for each object. Every fact comes from the sources listed below.</p>
+      <div id="story-list" class="story-list"></div>
+    </section>
+
+    <!-- SECTION D: WHY IT MATTERS -->
+    <section id="matters" class="section" aria-labelledby="matters-title">
+      <h2 id="matters-title">Why It Matters</h2>
+      <p class="hint">These machines are more than leftovers. Each one is evidence of how people and robots explored other worlds.</p>
+      <div class="why-grid">
+        <article class="why">
+          <h3>Engineering</h3>
+          <p>Real missions test real hardware. Opportunity worked about 60 times longer than planned. NASA reported that the Perseverance parachute showed no signs of damage from supersonic inflation. A JPL engineer called the landing the best-documented in Mars history, so engineers can study exactly what happened.</p>
+        </article>
+        <article class="why">
+          <h3>Scientific discovery</h3>
+          <p>The Apollo rovers gave crews range, and NASA says the major discoveries of Apollo 15, 16 and 17 would not have been possible without them. Orbiters such as LRO can photograph old sites decades later. NASA's JPL says Opportunity's exploration laid the groundwork for future Mars missions.</p>
+        </article>
+        <article class="why">
+          <h3>History of exploration</h3>
+          <p>Some hardware was left on purpose, some was designed to be discarded, and some was lost when its mission ended. Telling these cases apart lets us tell each story accurately, and shows how every mission builds on the ones before it.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- SECTION E: SOURCES -->
+    <section id="sources" class="section" aria-labelledby="sources-title">
+      <h2 id="sources-title">Sources</h2>
+      <p class="hint">Facts and figures in this project come from the NASA pages and other sources below. Links open in a new tab.</p>
+
+      <div class="sources-grid">
+        <div class="source-group">
+          <h3>Lunar Roving Vehicle</h3>
+          <ul>
+            <li><a href="https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html" target="_blank" rel="noopener">NASA NSSDC: The Apollo Lunar Roving Vehicle</a></li>
+            <li><a href="https://science.nasa.gov/wp-content/uploads/2024/01/lro-apollo-17-litho.pdf" target="_blank" rel="noopener">NASA LRO: Viewing Traces of Previous Explorers (Apollo 17 site, PDF)</a></li>
+            <li><a href="http://www.nasa.gov/mission_pages/LRO/news/apollo-sites.html" target="_blank" rel="noopener">NASA LRO: Sharper views of Apollo landing sites</a></li>
+            <li><a href="https://airandspace.si.edu/es/collection-objects/lunar-roving-vehicle-qualification-test-unit/nasm_A19760746000" target="_blank" rel="noopener">Smithsonian National Air and Space Museum: Lunar Roving Vehicle (not NASA)</a></li>
+          </ul>
+        </div>
+        <div class="source-group">
+          <h3>Perseverance parachute and backshell</h3>
+          <ul>
+            <li><a href="https://science.nasa.gov/resource/rovers-backshell-seen-from-the-air" target="_blank" rel="noopener">NASA: Rover's Backshell Seen From the Air</a></li>
+            <li><a href="https://www.jpl.nasa.gov/images/pia25219-rovers-backshell-seen-from-the-air/" target="_blank" rel="noopener">NASA/JPL: PIA25219, Rover's Backshell Seen From the Air</a></li>
+            <li><a href="https://www.nasa.gov/?p=96624" target="_blank" rel="noopener">NASA: Mars Helicopter Spots Gear That Helped Perseverance Rover Land</a></li>
+          </ul>
+        </div>
+        <div class="source-group">
+          <h3>Opportunity rover</h3>
+          <ul>
+            <li><a href="https://www.jpl.nasa.gov/news/nasas-opportunity-rover-mission-on-mars-comes-to-end/" target="_blank" rel="noopener">NASA/JPL: Opportunity Rover Mission on Mars Comes to End</a></li>
+            <li><a href="https://www.jpl.nasa.gov/news/opportunitys-parting-shot-was-a-beautiful-panorama/" target="_blank" rel="noopener">NASA/JPL: Opportunity's Parting Shot Was a Beautiful Panorama</a></li>
+          </ul>
+        </div>
+        <div class="source-group">
+          <h3>Challenge and image rules</h3>
+          <ul>
+            <li><a href="https://www.spaceappschallenge.org/2026/challenges/nasas-discarded-equipment-storytelling/" target="_blank" rel="noopener">Space Apps 2026 challenge: Abandoned but not Forgotten</a></li>
+            <li><a href="https://www.nasa.gov/multimedia/guidelines/index.html" target="_blank" rel="noopener">NASA Images and Media Usage Guidelines</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="notes">
+        <h3>Image credits</h3>
+        <p>This site shows no NASA photographs. The pictures on the cards are simple original drawings made for this project. Several source links above lead to NASA images; those images are credited on their own pages (for example, NASA/JPL-Caltech for the Ingenuity photos of the Perseverance backshell).</p>
+        <h3>Disclaimer</h3>
+        <p>LEFT BEHIND is an independent student project made by Team SinNombre for the NASA Space Apps Challenge 2026. It was not made by NASA and is not endorsed by NASA.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>LEFT BEHIND &middot; Team SinNombre &middot; NASA Space Apps Challenge 2026</p>
+    <p>An independent student project. Not endorsed by NASA.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

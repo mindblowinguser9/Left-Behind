@@ -1,0 +1,538 @@
+/* ==========================================================
+   LEFT BEHIND: styles
+   Colors are defined once below. Change them here to restyle the site.
+   ========================================================== */
+
+:root {
+  --bg: #050b1a;          /* dark navy */
+  --panel: #0c1730;       /* card background */
+  --panel-2: #101f3f;     /* slightly lighter panel */
+  --line: #1e2f55;        /* thin borders */
+  --accent: #4aa3ff;      /* blue accent */
+  --accent-soft: #7bbcff; /* lighter blue for hover */
+  --text: #ffffff;
+  --muted: #b8c4dc;       /* softer white for small text */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px; /* keeps headings clear of the sticky menu */
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  font-family: "Segoe UI", system-ui, -apple-system, Arial, Helvetica, sans-serif;
+  line-height: 1.65;
+  background-color: var(--bg);
+  /* A simple starfield made only with CSS: tiny dots plus a navy gradient */
+  background-image:
+    radial-gradient(1px 1px at 20px 30px, rgba(255, 255, 255, 0.75) 50%, transparent 51%),
+    radial-gradient(1px 1px at 120px 80px, rgba(207, 227, 255, 0.6) 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 200px 160px, rgba(255, 255, 255, 0.55) 50%, transparent 51%),
+    linear-gradient(180deg, #02050e 0%, #050b1a 45%, #07112a 100%);
+  background-size: 240px 200px, 310px 260px, 400px 340px, 100% 100%;
+}
+
+h1, h2, h3, h4 {
+  line-height: 1.2;
+}
+
+a {
+  color: var(--accent-soft);
+}
+
+/* Visible outline for keyboard users */
+:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
+}
+
+/* ---------- Skip link and top menu ---------- */
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -60px;
+  background: #ffffff;
+  color: #04101f;
+  padding: 10px 16px;
+  border-radius: 6px;
+  z-index: 20;
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
+.topnav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 24px;
+  padding: 10px 20px;
+  background: rgba(5, 11, 26, 0.92);
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  color: var(--text);
+  font-weight: bold;
+  letter-spacing: 0.18em;
+  text-decoration: none;
+}
+
+.topnav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.topnav ul a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.topnav ul a:hover {
+  color: var(--accent-soft);
+}
+
+/* ---------- Section A: Homepage ---------- */
+.hero {
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 60px 20px;
+  background: radial-gradient(ellipse at 50% 40%, rgba(74, 163, 255, 0.16), transparent 60%);
+  animation: fadeUp 0.9s ease both;
+}
+
+.eyebrow {
+  color: var(--muted);
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin: 0 0 16px;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 9vw, 5.5rem);
+  letter-spacing: 0.15em;
+  margin: 0 0 12px;
+}
+
+.subtitle {
+  color: var(--accent);
+  font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+  margin: 0 0 24px;
+}
+
+.intro {
+  max-width: 600px;
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin: 0 0 34px;
+}
+
+.button {
+  display: inline-block;
+  background: var(--accent);
+  color: #04101f;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 14px 30px;
+  border-radius: 6px;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.button:hover {
+  background: var(--accent-soft);
+  transform: translateY(-2px);
+}
+
+/* ---------- Shared section style ---------- */
+.section {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 64px 20px;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin: 0 0 8px;
+}
+
+.hint {
+  color: var(--muted);
+  margin: 0 0 28px;
+}
+
+/* ---------- Section B: Legend and cards ---------- */
+.legend {
+  list-style: none;
+  margin: 0 0 28px;
+  padding: 16px 20px;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.legend strong {
+  display: block;
+  color: var(--text);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  text-align: left;
+  background: var(--panel);
+  color: var(--text);
+  font: inherit;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 20px;
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.card.selected {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+.card-art {
+  width: 100%;
+  max-width: 190px;
+  height: auto;
+  margin-bottom: 6px;
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.badge {
+  display: inline-block;
+  border: 1px solid var(--accent);
+  color: var(--accent-soft);
+  border-radius: 20px;
+  padding: 2px 12px;
+  font-size: 0.82rem;
+}
+
+.card-line {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.card-line strong {
+  color: var(--text);
+}
+
+.card-open {
+  margin-top: auto;
+  padding-top: 6px;
+  color: var(--accent-soft);
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+/* ---------- Detail box (opens under the cards) ---------- */
+.detail {
+  margin-top: 28px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: 12px;
+  padding: 28px;
+  animation: fadeUp 0.4s ease both;
+}
+
+.detail[hidden] {
+  display: none;
+}
+
+.detail-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.detail h3 {
+  margin: 0 0 8px;
+  font-size: 1.6rem;
+}
+
+.close-btn {
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 6px 16px;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent-soft);
+}
+
+.status-note {
+  color: var(--muted);
+  margin: 10px 0 18px;
+}
+
+.meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px 24px;
+  margin: 0 0 20px;
+  padding: 14px 16px;
+  background: var(--panel-2);
+  border-radius: 8px;
+}
+
+.meta dt {
+  color: var(--accent-soft);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.meta dd {
+  margin: 2px 0 0;
+}
+
+.detail h4 {
+  color: var(--accent);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 22px 0 8px;
+}
+
+.detail p {
+  margin: 0;
+}
+
+.detail ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.detail li {
+  margin-bottom: 8px;
+}
+
+.detail .story {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  padding: 16px 18px;
+  background: var(--panel-2);
+  border-radius: 8px;
+}
+
+/* ---------- Section C: Stories ---------- */
+.story-list {
+  display: grid;
+  gap: 20px;
+}
+
+.story-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.story-card h3 {
+  margin: 0 0 8px;
+  font-size: 1.35rem;
+}
+
+.story-card p {
+  margin: 14px 0 16px;
+  line-height: 1.8;
+}
+
+.story-btn {
+  background: transparent;
+  color: var(--accent-soft);
+  font: inherit;
+  font-weight: bold;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  padding: 8px 18px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.story-btn:hover {
+  background: rgba(74, 163, 255, 0.15);
+}
+
+/* ---------- Section D: Why it matters ---------- */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.why {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--accent);
+  border-radius: 12px;
+  padding: 22px;
+}
+
+.why h3 {
+  margin: 0 0 10px;
+}
+
+.why p {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* ---------- Section E: Sources ---------- */
+.sources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.source-group {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 20px 22px;
+}
+
+.source-group h3 {
+  margin: 0 0 10px;
+  font-size: 1.1rem;
+}
+
+.source-group ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.source-group li {
+  margin-bottom: 8px;
+  overflow-wrap: anywhere;
+}
+
+.notes {
+  margin-top: 28px;
+  color: var(--muted);
+}
+
+.notes h3 {
+  color: var(--text);
+  font-size: 1.05rem;
+  margin: 18px 0 6px;
+}
+
+.notes p {
+  margin: 0;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+  padding: 30px 20px 40px;
+  border-top: 1px solid var(--line);
+}
+
+.footer p {
+  margin: 4px 0;
+}
+
+/* ---------- Simple fade-in animation ---------- */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Respect people who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 600px) {
+  .topnav {
+    justify-content: center;
+  }
+
+  .section {
+    padding: 48px 16px;
+  }
+
+  .detail {
+    padding: 20px;
+  }
+}
